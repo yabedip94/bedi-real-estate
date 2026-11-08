@@ -18,10 +18,10 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
         />
         {/* Stone Status Badge */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5">
-          <span className="px-2.5 py-1 text-[11px] font-sans font-medium uppercase tracking-wider bg-limestone/95 text-ink backdrop-blur-sm border border-sand-dark/40 rounded-none">
+          <span className="px-2.5 py-1 text-[11px] font-sans font-semibold uppercase tracking-wider bg-limestone text-ink border border-sand-dark/80 shadow-xs rounded-none">
             {property.status === "dijual" ? "Dijual" : "Disewa"}
           </span>
-          <span className="px-2.5 py-1 text-[11px] font-sans font-medium uppercase tracking-wider bg-ink/90 text-limestone backdrop-blur-sm rounded-none">
+          <span className="px-2.5 py-1 text-[11px] font-sans font-medium uppercase tracking-wider bg-ink text-white border border-ink/80 shadow-xs rounded-none">
             {property.type}
           </span>
         </div>

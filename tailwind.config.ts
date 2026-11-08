@@ -10,30 +10,30 @@ const config: Config = {
     extend: {
       colors: {
         limestone: {
-          DEFAULT: "var(--color-limestone)",
+          DEFAULT: "#F4F0E8",
         },
         ink: {
-          DEFAULT: "var(--color-ink)",
+          DEFAULT: "#252722",
           light: "#3a3c35",
           muted: "#555850",
         },
         sage: {
-          DEFAULT: "var(--color-sage)",
+          DEFAULT: "#858875",
           light: "#9ea192",
           dark: "#686a5a",
         },
         bronze: {
-          DEFAULT: "var(--color-bronze)",
+          DEFAULT: "#B39A78",
           light: "#c5b093",
           dark: "#967f60",
         },
         sand: {
-          DEFAULT: "var(--color-sand)",
+          DEFAULT: "#E4DED2",
           light: "#ede9e0",
           dark: "#d1c9ba",
         },
         white: {
-          DEFAULT: "var(--color-white)",
+          DEFAULT: "#FFFFFF",
         },
       },
       fontFamily: {

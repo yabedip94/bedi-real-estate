@@ -33,16 +33,17 @@ export function FeaturedLocationsSection() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-limestone space-y-2">
-              <span className="text-[11px] font-sans uppercase tracking-widest text-bronze-light font-medium block">
+            {/* Localized Bottom Gradient Overlay */}
+            <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-2 z-10">
+              <span className="text-[11px] font-sans uppercase tracking-widest text-sand-light font-semibold block">
                 Kawasan Bersejarah
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight flex items-center justify-between">
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-white flex items-center justify-between">
                 <span>Menteng &amp; Kebayoran Baru</span>
-                <ArrowUpRight className="w-5 h-5 text-bronze opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ArrowUpRight className="w-5 h-5 text-sand-light group-hover:text-white opacity-0 group-hover:opacity-100 transition-all" />
               </h3>
-              <p className="text-xs sm:text-sm font-sans text-sage-light leading-relaxed max-w-md">
+              <p className="text-xs sm:text-sm font-sans text-sand-light/95 leading-relaxed max-w-md">
                 Keanggunan arsitektur kolonial tropis dan keteduhan pepohonan berusia seabad di jantung kawasan diplomatik Jakarta.
               </p>
             </div>
@@ -62,16 +63,17 @@ export function FeaturedLocationsSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 text-limestone space-y-1">
-                <span className="text-[10px] font-sans uppercase tracking-widest text-bronze-light font-medium block">
+              {/* Localized Bottom Gradient Overlay */}
+              <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-ink/95 via-ink/65 to-transparent pointer-events-none" />
+              <div className="absolute bottom-5 left-5 right-5 text-white space-y-1.5 z-10">
+                <span className="text-[11px] font-sans uppercase tracking-widest text-sand-light font-semibold block">
                   Pesisir Samudra
                 </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-semibold tracking-tight flex items-center justify-between">
+                <h3 className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-white flex items-center justify-between">
                   <span>Uluwatu &amp; Canggu, Bali</span>
-                  <ArrowUpRight className="w-4 h-4 text-bronze opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ArrowUpRight className="w-4 h-4 text-sand-light group-hover:text-white opacity-0 group-hover:opacity-100 transition-all" />
                 </h3>
-                <p className="text-xs font-sans text-sage-light">
+                <p className="text-xs font-sans text-sand-light/95 leading-relaxed">
                   Kemegahan tebing kapur dan ketenangan gaya hidup pesisir tropis modern.
                 </p>
               </div>
@@ -85,21 +87,22 @@ export function FeaturedLocationsSection() {
                 className="group relative aspect-[4/3] sm:aspect-auto sm:min-h-[275px] rounded-sm overflow-hidden bg-ink shadow-sm border border-sand-dark/60 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
                   alt="Dago Pakar - Lereng Bukit Bandung"
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-limestone space-y-1">
-                  <span className="text-[10px] font-sans uppercase tracking-widest text-bronze-light font-medium block">
+                {/* Localized Bottom Gradient Overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-ink/95 via-ink/70 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 text-white space-y-1 z-10">
+                  <span className="text-[10px] font-sans uppercase tracking-widest text-sand-light font-semibold block">
                     Dataran Tinggi
                   </span>
-                  <h4 className="font-serif text-lg font-semibold tracking-tight">
+                  <h4 className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-white">
                     Dago Pakar, Bandung
                   </h4>
-                  <p className="text-[11px] font-sans text-sage-light leading-snug">
+                  <p className="text-[11px] sm:text-xs font-sans text-sand-light/95 leading-snug">
                     Hunian lereng bukit berhawa sejuk dengan panorama lembah pinus.
                   </p>
                 </div>
@@ -117,15 +120,16 @@ export function FeaturedLocationsSection() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-limestone space-y-1">
-                  <span className="text-[10px] font-sans uppercase tracking-widest text-bronze-light font-medium block">
+                {/* Localized Bottom Gradient Overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-ink/95 via-ink/70 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 text-white space-y-1 z-10">
+                  <span className="text-[10px] font-sans uppercase tracking-widest text-sand-light font-semibold block">
                     Urban Hijau
                   </span>
-                  <h4 className="font-serif text-lg font-semibold tracking-tight">
+                  <h4 className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-white">
                     BSD City, Tangerang
                   </h4>
-                  <p className="text-[11px] font-sans text-sage-light leading-snug">
+                  <p className="text-[11px] sm:text-xs font-sans text-sand-light/95 leading-snug">
                     Presisi kota terencana dengan keterhubungan lanskap botani dan air.
                   </p>
                 </div>

@@ -79,10 +79,14 @@ export function Header() {
             </Link>
             <Link
               href="/dashboard"
-              className="text-xs text-sage hover:text-ink transition-colors flex items-center gap-1.5 px-2.5 py-1 bg-sand/60 rounded-none border border-sand-dark/40"
+              className={`text-xs transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded-none border ${
+                pathname === "/dashboard"
+                  ? "bg-ink text-limestone border-ink font-semibold"
+                  : "bg-sand/60 text-sage hover:text-ink border-sand-dark/40"
+              }`}
             >
               <span>Dashboard</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-bronze" />
+              <span className={`w-1.5 h-1.5 rounded-full ${pathname === "/dashboard" ? "bg-bronze-light" : "bg-bronze"}`} />
             </Link>
           </nav>
 

@@ -60,12 +60,13 @@ export function HeroSection() {
                 sizes="(max-width: 1024px) 100vw, 58vw"
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 text-limestone space-y-1">
-                <span className="text-[11px] font-sans uppercase tracking-widest text-bronze-light font-medium block">
+              {/* Localized Bottom Gradient Overlay: keeps top half bright while securing high-contrast text backing */}
+              <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5 z-10">
+                <span className="text-[11px] font-sans uppercase tracking-widest text-sand-light font-semibold block">
                   Koleksi Residensial Terkurasi
                 </span>
-                <p className="font-serif text-xl sm:text-2xl font-medium tracking-tight">
+                <p className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-white leading-snug drop-shadow-xs">
                   The Kayuputih Residence &mdash; Menteng
                 </p>
               </div>

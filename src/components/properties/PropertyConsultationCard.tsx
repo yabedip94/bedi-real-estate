@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check, MessageSquare, PhoneCall, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { Copy, Check, MessageSquare, PhoneCall, ShieldCheck, FileText } from "lucide-react";
 import type { Property } from "@/types/property";
 import { formatPropertyPrice } from "@/lib/formatters";
 import {
@@ -111,6 +112,15 @@ export function PropertyConsultationCard({ property }: PropertyConsultationCardP
 
       {/* Action Buttons */}
       <div className="space-y-2.5 pt-1">
+        {/* Open Online Consultation Form */}
+        <Link
+          href={`/contact?property=${property.slug}`}
+          className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-sand/60 hover:bg-sand text-ink border border-sand-dark/80 text-xs font-sans uppercase tracking-widest font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-bronze"
+        >
+          <FileText className="w-4 h-4 text-bronze-dark" />
+          <span>Formulir Konsultasi Online</span>
+        </Link>
+
         {/* Copy Inquiry Message Button */}
         <button
           type="button"
