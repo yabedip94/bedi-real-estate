@@ -2,7 +2,7 @@
 
 **Project:** BEDI REAL ESTATE  
 **Brand:** NARA ESTATE (*"Find a place to belong."*)  
-**Milestone Status:** Verification Completed — Pending Closeout Sign-off
+**Milestone Status:** Completed
 **Latest Approved Commit:** `0b30dd7`
 **Baseline Commit:** `33f0aea` (Milestone M03)
 **Mapped Requirements:** `FR-002` (Property Listing), `FR-003` (Property Search), `FR-004` (Property Filtering), `FR-005` (Property Sorting)  
@@ -44,11 +44,11 @@ The execution of Milestone M04 was structured into sequential, independently ver
   - Built responsive card grid `PropertyGrid.tsx` and Suspense shimmer fallback `CatalogLoadingSkeleton.tsx`.
   - Created Server Component route at `src/app/properties/page.tsx` with static page prerendering.
   - Added 14 unit tests for catalog URL parameter parsing, fallback, and round-tripping.
-- **M04.4 — Integration QA, Release Verification & Documentation Alignment (Current Step):**
+- **M04.4 — Integration QA, Release Verification & Documentation Alignment (`commit a019860`):**
   - Executed full quality gates (86 unit tests passing, zero ESLint warnings, clean TypeScript check, static build export).
   - Executed browser-based visual and interactive verification via Playwright MCP across 1440px desktop, 768px tablet, and 390px mobile viewports.
   - Reconciled and aligned milestone documentation with committed repository state.
-  - *Status:* Technical implementation and verification completed; awaiting formal project-owner closeout sign-off.
+  - *Formal Closeout Sign-off:* Approved and signed off by the project owner. Milestone M04 is formally closed.
 
 ---
 
