@@ -237,13 +237,54 @@ describe("related properties engine", () => {
       assert.equal(uniqueSlugs.size, 12);
     });
 
-    it("ensures every property has 4 to 5 images", () => {
+    it("ensures every property has exactly 5 images (60 total slots)", () => {
+      let totalImages = 0;
       PROPERTIES.forEach((prop) => {
-        assert.ok(
-          prop.images.length >= 4 && prop.images.length <= 5,
-          `Property ${prop.slug} has ${prop.images.length} images; expected 4-5`
+        assert.equal(
+          prop.images.length,
+          5,
+          `Property ${prop.slug} has ${prop.images.length} images; expected exactly 5`
         );
+        totalImages += prop.images.length;
       });
+      assert.equal(totalImages, 60, "Expected exactly 60 total image slots across all properties");
+    });
+
+    it("ensures all 60 image photo IDs are globally unique across the entire catalog", () => {
+      const extractPhotoId = (url: string): string => {
+        const match = url.match(/photo-[0-9a-zA-Z-]+/);
+        return match ? match[0] : url;
+      };
+
+      const photoIds = PROPERTIES.flatMap((p) => p.images.map((img) => extractPhotoId(img.url)));
+      assert.equal(photoIds.length, 60, "Expected 60 photo IDs extracted");
+
+      const uniquePhotoIds = new Set(photoIds);
+      assert.equal(
+        uniquePhotoIds.size,
+        60,
+        `Expected 60 unique photo IDs across catalog, found ${uniquePhotoIds.size}`
+      );
+    });
+
+    it("verifies the 5 owner-approved image curation corrections", () => {
+      const p5 = PROPERTIES.find((p) => p.id === "prop-05")!;
+      assert.ok(p5.images[4].url.includes("photo-1771888703720-6a55f70dcbed"));
+      assert.equal(p5.images[4].alt, "NavaPark Botanical - Expansive Banquet Dining");
+
+      const p6 = PROPERTIES.find((p) => p.id === "prop-06")!;
+      assert.ok(p6.images[1].url.includes("photo-1778640331184-dc4c3e2608e1"));
+      assert.equal(p6.images[1].alt, "Batu Bolong Curated - Poolside Living Pavilion");
+
+      const p11 = PROPERTIES.find((p) => p.id === "prop-11")!;
+      assert.ok(p11.images[1].url.includes("photo-1592229506151-845940174bb0"));
+      assert.equal(p11.images[1].alt, "Cimanuk Heritage - Neoclassical Salon");
+      assert.ok(p11.images[2].url.includes("photo-1780245996099-aa03ab9244c0"));
+      assert.equal(p11.images[2].alt, "Cimanuk Heritage - Vintage Master Suite");
+
+      const p12 = PROPERTIES.find((p) => p.id === "prop-12")!;
+      assert.ok(p12.images[3].url.includes("photo-1786801769576-901fc70445d9"));
+      assert.equal(p12.images[3].alt, "The Lumina Penthouse - Skyline Sky Pool");
     });
 
     it("ensures exactly one primary image exists per property", () => {
