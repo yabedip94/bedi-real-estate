@@ -11,7 +11,7 @@ export interface PropertyCardData {
   area: string;
   city: string;
   specs: {
-    landArea: number; // m²
+    landArea?: number; // m² (optional for apartments / penthouses)
     buildingArea: number; // m²
     bedrooms: number;
     bathrooms: number;
@@ -66,8 +66,12 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
 
         {/* Architectural Specs Ribbon */}
         <div className="pt-3 border-t border-sand-dark/40 flex items-center justify-between text-xs font-sans text-ink-muted tabular-nums">
-          <span>LT {property.specs.landArea} m²</span>
-          <span className="text-sand-dark">·</span>
+          {property.specs.landArea !== undefined ? (
+            <>
+              <span>LT {property.specs.landArea} m²</span>
+              <span className="text-sand-dark">·</span>
+            </>
+          ) : null}
           <span>LB {property.specs.buildingArea} m²</span>
           <span className="text-sand-dark">·</span>
           <span>{property.specs.bedrooms} KT</span>
@@ -78,4 +82,3 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
     </article>
   );
 }
-
