@@ -19,6 +19,7 @@ export interface MobileFilterDrawerProps {
   cities: string[];
   totalResults?: number;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
+  onGetDraftCount?: (draft: PropertyFilterState) => number;
 }
 
 export function MobileFilterDrawer({
@@ -29,11 +30,15 @@ export function MobileFilterDrawer({
   cities,
   totalResults,
   triggerRef,
+  onGetDraftCount,
 }: MobileFilterDrawerProps) {
   // Mobile selections must use a draft state
   const [draft, setDraft] = useState<PropertyFilterState>(filters);
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Derive dynamic result count from draft state when evaluator callback is provided
+  const draftCount = onGetDraftCount ? onGetDraftCount(draft) : totalResults;
 
   // Synchronize draft filters whenever drawer opens
   useEffect(() => {
@@ -385,8 +390,8 @@ export function MobileFilterDrawer({
             onClick={handleApply}
             className="flex-[2] min-h-[44px] inline-flex items-center justify-center px-4 py-3 bg-ink text-limestone text-xs uppercase tracking-widest font-sans font-semibold hover:bg-bronze transition-colors focus:outline-none focus:ring-2 focus:ring-bronze rounded-none"
           >
-            {totalResults !== undefined
-              ? `Terapkan (${totalResults})`
+            {draftCount !== undefined
+              ? `Terapkan (${draftCount})`
               : "Terapkan Filter"}
           </button>
         </div>

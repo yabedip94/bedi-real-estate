@@ -23,6 +23,7 @@ export interface PropertyFilterBarProps {
   onReset?: () => void;
   cities?: string[];
   totalResults?: number;
+  onGetDraftCount?: (draft: PropertyFilterState) => number;
 }
 
 export function PropertyFilterBar({
@@ -31,6 +32,7 @@ export function PropertyFilterBar({
   onReset,
   cities = PROPERTY_CITIES,
   totalResults,
+  onGetDraftCount,
 }: PropertyFilterBarProps) {
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
@@ -377,6 +379,7 @@ export function PropertyFilterBar({
         cities={cities}
         totalResults={totalResults}
         triggerRef={mobileTriggerRef}
+        onGetDraftCount={onGetDraftCount}
       />
     </div>
   );
