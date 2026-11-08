@@ -1,22 +1,34 @@
+import { HeroSection } from "@/components/home/HeroSection";
+import { BrandManifestoSection } from "@/components/home/BrandManifestoSection";
+import { CuratedPropertiesSection } from "@/components/home/CuratedPropertiesSection";
+import { FeaturedLocationsSection } from "@/components/home/FeaturedLocationsSection";
+import { ArchitectureLivingSection } from "@/components/home/ArchitectureLivingSection";
+import { TheNaraApproachSection } from "@/components/home/TheNaraApproachSection";
+import { ClosingCtaSection } from "@/components/home/ClosingCtaSection";
+
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 text-center bg-limestone">
-      <div className="max-w-editorial w-full mx-auto space-y-6">
-        <span className="text-xs uppercase tracking-[0.2em] text-sage font-medium">
-          BEDI REAL ESTATE &mdash; M02.2
-        </span>
-        <h1 className="text-4xl md:text-5xl font-serif text-ink tracking-tight">
-          NARA ESTATE
-        </h1>
-        <p className="text-base md:text-lg text-ink-muted italic font-serif">
-          Find a place to belong.
-        </p>
-        <div className="pt-4 inline-flex items-center gap-2 px-4 py-2 bg-sand rounded-sm border border-sand-dark text-xs text-ink font-sans">
-          <span className="w-2 h-2 rounded-full bg-bronze animate-pulse" />
-          <span>Fondasi Teknis & Sistem Desain Terverifikasi (Next.js App Router)</span>
-        </div>
-      </div>
+    <main className="w-full">
+      {/* 02. Hero — Find Your Place (Visual Monograph & Quick Search Dock) */}
+      <HeroSection />
+
+      {/* 03. Brand Manifesto — More Than a Property (Curatorial Note & 4 Statements) */}
+      <BrandManifestoSection />
+
+      {/* 04. Curated Properties — Selected for Living (Featured Grid) */}
+      <CuratedPropertiesSection />
+
+      {/* 05. Featured Locations — Places with Character (4-Card Asymmetric Mosaic) */}
+      <FeaturedLocationsSection />
+
+      {/* 06. Architecture & Living — A Different Perspective (Essay & Triptych) */}
+      <ArchitectureLivingSection />
+
+      {/* 07. The NARA Approach — Curated with Intention (4 Editorial Principles) */}
+      <TheNaraApproachSection />
+
+      {/* 08. Closing CTA — Begin Your Next Chapter (Private Inquire & Demo WhatsApp) */}
+      <ClosingCtaSection />
     </main>
   );
 }
-

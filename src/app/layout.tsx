@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "@/styles/globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -30,10 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
-      <body className="bg-limestone text-ink font-sans antialiased min-h-screen">
-        {children}
+      <body className="bg-limestone text-ink font-sans antialiased min-h-screen flex flex-col selection:bg-bronze selection:text-ink">
+        <Header />
+        <div className="flex-1">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
 }
-
