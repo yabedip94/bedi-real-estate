@@ -1,24 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-
-export interface PropertyCardData {
-  title: string;
-  slug: string;
-  status: "dijual" | "disewa";
-  type: string;
-  priceFormatted: string;
-  pricePeriod?: string;
-  area: string;
-  city: string;
-  specs: {
-    landArea?: number; // m² (optional for apartments / penthouses)
-    buildingArea: number; // m²
-    bedrooms: number;
-    bathrooms: number;
-  };
-  imageUrl: string;
-  imageAlt: string;
-}
+import type { PropertyCardData } from "@/lib/property-adapter";
+export type { PropertyCardData } from "@/lib/property-adapter";
+export { toPropertyCardData } from "@/lib/property-adapter";
 
 export function PropertyCard({ property }: { property: PropertyCardData }) {
   return (
